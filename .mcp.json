@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "Mobbin__c477a407": {
+      "type": "http",
+      "url": "${MCP_PROXY_BASE_URL}/proxy/c477a407-88a0-4d50-84e3-ba5797153dcb",
+      "headers": {
+        "Authorization": "Bearer ${MCP_PROXY_AUTH_TOKEN}"
+      }
+    }
+  }
+}

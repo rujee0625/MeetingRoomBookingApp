@@ -1,0 +1,10 @@
+{
+  "description": "Effortlessly book and manage meeting rooms with an intuitive 3D floor plan, real-time availability, and streamlined scheduling for companies.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Noto Sans Thai', 'Noto Sans', system-ui, sans-serif;
+  --color-primary: #2f5be3;
+  --color-primary-hover: #2449c0;
+  --color-primary-soft: #e8efff;
+  --color-free: #15803d;
+  --color-free-soft: #f0fdf4;
+  --color-busy: #c2410c;
+  --color-busy-soft: #fff7ed;
+  --color-ink: #111827;
+  --color-ink-soft: #4b5563;
+  --color-line: #e5e7eb;
+  --color-page: #f5f6fa;
+}
+
+@utility glass {
+  background: rgb(255 255 255 / 0.68);
+  backdrop-filter: blur(18px) saturate(1.2);
+  border: 1px solid rgb(255 255 255 / 0.85);
+  box-shadow: 0 10px 36px rgb(70 105 170 / 0.16);
+}
+
+@utility app-bg {
+  background:
+    radial-gradient(900px 500px at 8% 0%, rgb(255 255 255 / 0.9), transparent 60%),
+    radial-gradient(700px 500px at 100% 100%, rgb(186 214 255 / 0.9), transparent 65%),
+    linear-gradient(160deg, #c5dcfa 0%, #dce9fb 45%, #eef4fe 100%);
+}
+
+html,
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+*:hover {
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+::selection {
+  background: #bfdbfe;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: scale(1.05) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.anim-settle {
+  animation: settle 900ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.anim-slide {
+  animation: slide-in 250ms ease-out both;
+}
+.anim-pop {
+  animation: pop-in 250ms ease-out both;
+}
+.anim-fade {
+  animation: fade-in 200ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-settle,
+  .anim-slide,
+  .anim-pop,
+  .anim-fade {
+    animation: none;
+  }
+}
